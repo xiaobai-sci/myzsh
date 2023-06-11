@@ -1,0 +1,22 @@
+gz() {
+  if [ $# -eq 1 ]; then
+    tar -zcvf $1.tar.gz $1
+  elif [ $# -gt 1 ]; then
+    tar -zcvf $1.tar.gz "${@:2}"
+  else
+    echo "Usage: gz archive_name [files...]"
+  fi
+}
+
+cda(){
+    conda activate $1
+}
+
+cdd(){
+    conda deactivate
+}
+
+help(){
+    less -F ~/.vim_runtime/help.txt
+}
+

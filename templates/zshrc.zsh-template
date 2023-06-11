@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 
 ZSH_THEME="agnoster"
 
-
+zstyle ':omz:update' mode disabled  # disable automatic updates
   
 HIST_STAMPS="yyyy-mm-dd"
 
@@ -82,9 +82,9 @@ if [ -f ~/.bash_func ]; then
     source ~/.bash_func
 fi
 
-if [ -f ~/.bashrc ]; then
-    source ~/.bashrc
-fi
+# if [ -f ~/.bashrc ]; then
+#     source ~/.bashrc
+# fi
 
 if [ -d "$HOME/bin" ] ; then
      PATH="$HOME/bin:$PATH"
@@ -108,5 +108,3 @@ fi
 # 开启文件名匹配    rm ^xx    删除除了xx的所有文件
 setopt extended_glob
 
-# 两次空格接受建议并执行
-bindkey '  ' autosuggest-execute
